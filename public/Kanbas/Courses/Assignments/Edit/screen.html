@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Grades</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Assignment</title>
   </head>
   <body>
     <table width="100%">
@@ -65,88 +67,86 @@
             <li><a href="/Kanbas/Courses/Pages/index.html"> Pages</a></li>
             <li><a href="/Kanbas/Courses/Files/index.html"> Files</a></li>
             <li><a href="/Kanbas/Courses/Rubrics/index.html"> Rubrics</a></li>
-            <li>
-              <a href="/Kanbas/Courses/Outcomes/index.html"> Outcomes</a>
-            </li>
+            <li><a href="/Kanbas/Courses/Outcomes/index.html"> Outcomes</a></li>
             <li>
               <a href="/Kanbas/Courses/Collaborations/index.html">
                 Collaborations</a
               >
             </li>
-            <li>
-              <a href="/Kanbas/Courses/Syllabus/index.html"> Syllabus</a>
-            </li>
-            <li>
-              <a href="/Kanbas/Courses/Settings/index.html"> Settings</a>
-            </li>
+            <li><a href="/Kanbas/Courses/Syllabus/index.html"> Syllabus</a></li>
+            <li><a href="/Kanbas/Courses/Settings/index.html"> Settings</a></li>
           </ul>
         </td>
         <td valign="top">
-          <select name="grade-book" id="grade-book">
-            <option selected>Gradebook</option>
-            <option>Option 2</option>
-            <option>Option 3</option>
-          </select>
-          <button>Import</button>
           <select>
-            <option selected>Export</option>
+            <option selected>Speed Grader</option>
           </select>
-          <button>Configure</button>
-          <h1>Student Name</h1>
-          <input type="text" placeholder="Search Students" />
-          <br />
-          <h1>Assignment Names</h1>
-          <input type="text" placeholder="Search Assignments" />
+          <hr />
+          <label><h2>Assignment Name</h2></label>
+          <input type="text" value="A1 - ENV + HTML" />
           <br />
           <br />
-          <button>Apply Filter</button>
+          <textarea type="text" rows="2">
+This is assignment description.</textarea
+          >
           <br />
           <br />
-          <table border="1" width="100%">
-            <tr>
-              <th>Student Name</th>
-              <th>Assignment 1 <br />(out of 100)</th>
-              <th>Assignment 2 <br />(out of 100)</th>
-              <th>Assignment 3 <br />(out of 100)</th>
-              <th>Assignment 4 <br />(out of 100)</th>
-            </tr>
-            <tr align="center">
-              <td align="left">Bob</td>
-              <td>90</td>
-              <td>
-                <input size="2" type="text" placeholder="Grade" value="85" />
-              </td>
-              <td>92</td>
-              <td>88</td>
-            </tr>
-            <tr align="center">
-              <td align="left">Alice</td>
-              <td>80</td>
-              <td>75</td>
-              <td>82</td>
-              <td>78</td>
-            </tr>
-            <tr align="center">
-              <td align="left">Jonathan</td>
-              <td>70</td>
-              <td>72</td>
-              <td>
-                <input size="2" type="text" placeholder="Grade" value="65" />
-              </td>
-              <td>68</td>
-            </tr>
-            <tr align="center">
-              <td align="left">Eric</td>
-              <td>
-                <input size="2" type="text" placeholder="Grade" value="85" />
-              </td>
-              <td>80</td>
-              <td>87</td>
-              <td>
-                <input size="2" type="text" placeholder="Grade" value="83" />
-              </td>
-            </tr>
-          </table>
+          <label>Points</label>
+          <br />
+          <input type="number" value="100" />
+          <br />
+          <br />
+          <label>Assignment Group</label><br />
+          <select>
+            <option selected>ASSIGNMENTS</option>
+          </select>
+          <br />
+          <br />
+          <label>Display Grade as</label><br />
+          <select>
+            <option selected>Percentage</option>
+          </select>
+          <br /><br />
+          <label>Submission Type</label><br />
+          <select>
+            <option selected>Online</option></select
+          ><br /><br />
+          <label>Online Entry Option</label><br />
+          <input id="text-entry" type="checkbox" /><label for="text-entry"
+            >Text Entry</label
+          ><br />
+          <input id="website-url" type="checkbox" /><label for="website-url"
+            >Website URL</label
+          ><br />
+          <input id="media-recording" type="checkbox" /><label
+            for="media-recording"
+            >Media Recording</label
+          ><br />
+          <input id="student-annotation" type="checkbox" /><label
+            for="student-annotation"
+            >Student Annotation</label
+          ><br />
+          <input id="file-uploads" type="checkbox" /><label for="file-uploads"
+            >File Uploads</label
+          ><br />
+          <br />
+          <label>Assign</label><br />
+          <label>Assign to</label><br />
+          <input type="text" value="Everyone" />
+          <br />
+          <br />
+          <label>Due</label><br />
+          <input type="date" value="2021-01-01" /><br /><br />
+          <label>Available from</label><br />
+          <input type="date" value="2021-01-01" /><br /><br />
+          <label>Unitl</label><br />
+          <input type="date" value="2021-01-01" /><br /><br />
+          <a href="/Kanbas/Courses/Assignments/screen.html"
+            ><button>Cancel</button></a
+          >
+          <a href="/Kanbas/Courses/Assignments/screen.html"
+            ><button>Save</button></a
+          >
         </td>
       </tr>
     </table>
