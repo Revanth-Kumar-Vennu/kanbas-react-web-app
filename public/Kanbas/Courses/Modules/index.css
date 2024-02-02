@@ -1,5 +1,5 @@
 .wd-modules > li:first-child {
-  background-color: eeeeef;
+  background-color: #eeeeef;
 }
 
 .wd-module-button {
@@ -24,27 +24,27 @@
 }
 
 .wd-module-link {
-  color: red !important;
+  color: rgba(200, 19, 19, 0.675)!important;
   text-decoration: none;
-  font-weight: 450 !important;
+  font-weight: 550 !important;
 }
 
 .wd-module-link:hover {
   text-decoration: underline;
-  text-decoration-color: red;
+  text-decoration-color: rgba(200, 19, 19, 0.675);
 }
 
 .wd-modules > li {
   color: rgba(0, 0, 0, 0.689);
 }
 .wd-add-module {
-  background-color: rgb(255, 54, 54);
-  box-shadow: 0px 0px 3px 0px rgb(255, 54, 54) !important;
+  background-color: rgba(200, 19, 19, 0.804);
+  box-shadow: 0px 0px 3px 0px rgba(200, 19, 19, 0.675) !important;
 }
 .wd-modules {
   border-radius: 0px;
   margin-bottom: 50px;
-  font-weight: 600;
+  font-weight: 550;
 }
 
 .wd-dots {

@@ -21,14 +21,14 @@
   background-color: white;
 }
 .wd-kanbas-navigation li.wd-active a {
-  color: red !important;
+  color: rgba(200, 19, 19, 0.675)!important;
 }
 .wd-kanbas-navigation a {
   color: white;
   text-decoration: none;
 }
 .wd-kanbas-navigation a i {
-  color: red;
+  color: rgba(255, 24, 24, 0.675) ;
   font-size: 2em;
   margin-bottom: 5px;
   padding-bottom: 5px;
