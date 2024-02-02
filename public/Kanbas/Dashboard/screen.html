@@ -1,8 +1,5 @@
 <html>
   <head>
-    <link rel="stylesheet" href="../Navigation/index.css" />
-    <link href="../../libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Dashboard/index.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.css"
       rel="stylesheet"
@@ -10,97 +7,109 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    
+    <link rel="stylesheet" href="../Navigation/index.css" />
+    <link href="../../libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Dashboard/index.css" rel="stylesheet" />
+    <link href="../style.css" rel="stylesheet" />
   </head>
   <body>
-
     <div class="container-fluid">
-      <div class="row">
-        <nav class="col-md-2 col-lg-1 d-none d-md-block wd-navbar">
-          <div class="sidebar-sticky">
-            <ul class="wd-kanbas-navigation">
-              <li>
-                <a href="http://northeastern.edu"
-                  ><img class="wd-neu-img" src="../../images/northeastern.jpg"
-                /></a>
-              </li>
-              <li class="wd-account">
-                <a href="/Kanbas/Account/Profile/screen.html">
-                  <i class="fas fa-user-circle act wd-account"></i>
-                  <br />
-                  <span>Account</span></a
+      <div class="dropdown d-block d-md-none wd-kanbas-navigation-dropdown">
+        <button
+          class="btn dropdown-toggle wd-kanbas-breadcrumb-btn"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="fas fa-bars wd-kanbas-breadcrumb"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/Kanbas/Account/Profile/screen.html"
+            >Account</a
+          >
+          <a class="dropdown-item" href="/Kanbas/Dashboard/screen.html"
+            >Dashboard</a
+          >
+          <a class="dropdown-item" href="/Kanbas/Courses/Home/screen.html"
+            >Courses</a
+          >
+          <a class="dropdown-item" href="#">Calendar</a>
+          <a class="dropdown-item" href="#">Inbox</a>
+          <a class="dropdown-item" href="#">History</a>
+          <a class="dropdown-item" href="#">Studio</a>
+          <a class="dropdown-item" href="#">Commons</a>
+          <a class="dropdown-item" href="#">Help</a>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="d-none d-md-block wd-navbar">
+          <ul class="wd-kanbas-navigation">
+            <li>
+              <a href="http://northeastern.edu"
+                ><img class="wd-neu-img" src="../../images/northeastern.jpg"
+              /></a>
+            </li>
+            <li class="wd-account">
+              <a href="/Kanbas/Account/Profile/screen.html">
+                <i class="fas fa-user-circle act wd-account"></i>
+                <br />
+                <span>Account</span></a
+              >
+            </li>
+            <li class="wd-active">
+              <a href="/Kanbas/Dashboard/screen.html">
+                <i class="fas fa-tachometer-alt pas"></i> <br /><span
+                  >Dashboard</span
                 >
-              </li>
-              <li class="wd-active">
-                <a href="/Kanbas/Dashboard/screen.html">
-                  <i class="fas fa-tachometer-alt pas"></i> <br /><span
-                    >Dashboard</span
-                  >
-                </a>
-              </li>
-              <li>
-                <a href="/Kanbas/Courses/Home/screen.html">
-                  <i class="fas fa-book pas"></i><br /><span>Courses</span></a
-                >
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa fa-calendar"></i><br /><span>Calendar</span></a
-                >
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-envelope-open-text pas"></i><br /><span
-                    >Inbox</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a href="#">
-                  <i class="far fa-clock pas"></i><br /><span>History</span></a
-                >
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-tv pas"></i><br /><span>Studio</span></a
-                >
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-arrow-circle-right pas"></i><br /><span
-                    >Commons</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-question-circle pas"></i><br /><span
-                    >Help</span
-                  ></a
-                >
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <div class="dropdown d-block d-md-none wd-kanbas-navigation-dropdown">
-            <button class="btn  dropdown-toggle wd-kanbas-breadcrumb-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <i class="fas fa-bars wd-kanbas-breadcrumb"></i>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="/Kanbas/Account/Profile/screen.html">Account</a>
-              <a class="dropdown-item" href="/Kanbas/Dashboard/screen.html">Dashboard</a>
-              <a class="dropdown-item" href="/Kanbas/Courses/Home/screen.html">Courses</a>
-              <a class="dropdown-item" href="#">Calendar</a>
-              <a class="dropdown-item" href="#">Inbox</a>
-              <a class="dropdown-item" href="#">History</a>
-              <a class="dropdown-item" href="#">Studio</a>
-              <a class="dropdown-item" href="#">Commons</a>
-              <a class="dropdown-item" href="#">Help</a>
-            </div>
-          </div>
-          
-        <main role="main" class="col-md-10 col-lg-11 ml-sm-auto">
-          
+              </a>
+            </li>
+            <li>
+              <a href="/Kanbas/Courses/Home/screen.html">
+                <i class="fas fa-book pas"></i><br /><span>Courses</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-calendar"></i><br /><span>Calendar</span></a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-envelope-open-text pas"></i><br /><span
+                  >Inbox</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="far fa-clock pas"></i><br /><span>History</span></a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-tv pas"></i><br /><span>Studio</span></a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-arrow-circle-right pas"></i><br /><span
+                  >Commons</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-question-circle pas"></i><br /><span
+                  >Help</span
+                ></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex-grow-1">
           <div class="p-4">
             <h1>Dashboard</h1>
             <hr />
@@ -109,155 +118,142 @@
             <div class="row">
               <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div class="col wd-card">
-                  
-                    <div class="wd-upper-half wd-bg-light-blue">
-                      <i class="fas fa-ellipsis-v wd-dots"></i>
-                    </div>
-                    <div class="wd-lower-half">
-                      <a class="wd-link" href="../Courses/Home/screen.html">
-                        <div class="wd-fontcolor-light-blue">
-                          CS5610 12631 Web Development...
-                        </div>
-                        <div class="wd-course-name wd-fontcolor-light-grey">
-                          CS5610.12631.202410
-                        </div>
-                        <div class="wd-course-term wd-fontcolor-light-grey">
-                          202410_1 Spring 2024 Semester Full Term
-                        </div>
-                        <i class="fas fa-edit wd-edit"></i>
-                      </a>
-                  
+                  <div class="wd-upper-half wd-bg-light-blue">
+                    <i class="fas fa-ellipsis-v wd-dots"></i>
+                  </div>
+                  <div class="wd-lower-half">
+                    <a class="wd-link" href="../Courses/Home/screen.html">
+                      <div class="wd-fontcolor-light-blue">
+                        CS5610 12631 Web Development...
+                      </div>
+                      <div class="wd-course-name wd-fontcolor-light-grey">
+                        CS5610.12631.202410
+                      </div>
+                      <div class="wd-course-term wd-fontcolor-light-grey">
+                        202410_1 Spring 2024 Semester Full Term
+                      </div>
+                      <i class="fas fa-edit wd-edit"></i>
+                    </a>
                   </div>
                 </div>
-                <div class="col wd-card" >
-                  
-                    <div class="wd-upper-half wd-bg-light-grey">
-                      <i class="fas fa-ellipsis-v wd-dots"></i>
-                    </div>
-                    <div class="wd-lower-half">
-                      <a class="wd-link" href="../Courses/Home/screen.html">
-                        <div class="wd-fontcolor-light-grey">
-                          CS5800 54796 Algorithms
-                        </div>
-                        <div class="wd-course-name wd-fontcolor-light-grey">
-                          CS5800.54796.123456
-                        </div>
-                        <div class="wd-course-term wd-fontcolor-light-grey">
-                          202410_1 Spring 2024 Semester Full Term
-                        </div>
-                        <i class="fas fa-edit wd-edit"></i>
-                      </a>
-                    
+                <div class="col wd-card">
+                  <div class="wd-upper-half wd-bg-light-grey">
+                    <i class="fas fa-ellipsis-v wd-dots"></i>
+                  </div>
+                  <div class="wd-lower-half">
+                    <a class="wd-link" href="../Courses/Home/screen.html">
+                      <div class="wd-fontcolor-light-grey">
+                        CS5800 54796 Algorithms
+                      </div>
+                      <div class="wd-course-name wd-fontcolor-light-grey">
+                        CS5800.54796.123456
+                      </div>
+                      <div class="wd-course-term wd-fontcolor-light-grey">
+                        202410_1 Spring 2024 Semester Full Term
+                      </div>
+                      <i class="fas fa-edit wd-edit"></i>
+                    </a>
                   </div>
                 </div>
-                <div class="col wd-card" >
-                  
-                    <div class="wd-upper-half wd-bg-light-orange">
-                      <i class="fas fa-ellipsis-v wd-dots"></i>
-                    </div>
-                    <div class="wd-lower-half">
-                      <a class="wd-link" href="../Courses/Home/screen.html">
-                        <div class="wd-fontcolor-light-orange">
-                          CS4530 12631 FSE
-                        </div>
-                        <div class="wd-course-name wd-fontcolor-light-grey">
-                          CS4530.12631.202410
-                        </div>
-                        <div class="wd-course-term wd-fontcolor-light-grey">
-                          202410_1 Fall 2023 Semester Full Term
-                        </div>
-                        <i class="fas fa-edit wd-edit"></i>
-                      </a>
-                    </div>
-                  
-                </div>
-                <div class="col wd-card" >
-                 
-                    <div class="wd-upper-half wd-bg-light-blue">
-                      <i class="fas fa-ellipsis-v wd-dots"></i>
-                    </div>
-                    <div class="wd-lower-half">
-                      <a class="wd-link" href="../Courses/Home/screen.html">
-                        <div class="wd-fontcolor-light-blue">
-                          CS5100 12631 DBMS
-                        </div>
-                        <div class="wd-course-name wd-fontcolor-light-grey">
-                          CS5100.12631.202410
-                        </div>
-                        <div class="wd-course-term wd-fontcolor-light-grey">
-                          202410_1 Fall 2023 Semester Full Term
-                        </div>
-                        <i class="fas fa-edit wd-edit"></i>
-                      </a>
-                    
+                <div class="col wd-card">
+                  <div class="wd-upper-half wd-bg-light-orange">
+                    <i class="fas fa-ellipsis-v wd-dots"></i>
+                  </div>
+                  <div class="wd-lower-half">
+                    <a class="wd-link" href="../Courses/Home/screen.html">
+                      <div class="wd-fontcolor-light-orange">
+                        CS4530 12631 FSE
+                      </div>
+                      <div class="wd-course-name wd-fontcolor-light-grey">
+                        CS4530.12631.202410
+                      </div>
+                      <div class="wd-course-term wd-fontcolor-light-grey">
+                        202410_1 Fall 2023 Semester Full Term
+                      </div>
+                      <i class="fas fa-edit wd-edit"></i>
+                    </a>
                   </div>
                 </div>
-                <div class="col wd-card" >
-                    <div class="wd-upper-half wd-bg-light-blue">
-                      <i class="fas fa-ellipsis-v wd-dots"></i>
-                    </div>
-                    <div class="wd-lower-half">
-                      <a class="wd-link" href="../Courses/Home/screen.html">
-                        <div class="wd-fontcolor-light-blue">
-                          CS5600 12631 PDP
-                        </div>
-                        <div class="wd-course-name wd-fontcolor-light-grey">
-                          CS5600.12631.202410
-                        </div>
-                        <div class="wd-course-term wd-fontcolor-light-grey">
-                          202410_1 Fall 2022 Semester Full Term
-                        </div>
-                        <i class="fas fa-edit wd-edit"></i>
-                      </a>
-                    </div>
-                  
-                </div>
-                <div class="col wd-card" >
-                 
-                    <div class="wd-upper-half wd-bg-light-blue">
-                      <i class="fas fa-ellipsis-v wd-dots"></i>
-                    </div>
-                    <div class="wd-lower-half">
-                      <a class="wd-link" href="../Courses/Home/screen.html">
-                        <div class="wd-fontcolor-light-blue">
-                          CS1234 12631 ReactJS
-                        </div>
-                        <div class="wd-course-name wd-fontcolor-light-grey">
-                          CS1234.12631.202410
-                        </div>
-                        <div class="wd-course-term wd-fontcolor-light-grey">
-                          202410_1 Fall 2022 Semester Full Term
-                        </div>
-                        <i class="fas fa-edit wd-edit"></i>
-                      </a>
-                    
+                <div class="col wd-card">
+                  <div class="wd-upper-half wd-bg-light-blue">
+                    <i class="fas fa-ellipsis-v wd-dots"></i>
+                  </div>
+                  <div class="wd-lower-half">
+                    <a class="wd-link" href="../Courses/Home/screen.html">
+                      <div class="wd-fontcolor-light-blue">
+                        CS5100 12631 DBMS
+                      </div>
+                      <div class="wd-course-name wd-fontcolor-light-grey">
+                        CS5100.12631.202410
+                      </div>
+                      <div class="wd-course-term wd-fontcolor-light-grey">
+                        202410_1 Fall 2023 Semester Full Term
+                      </div>
+                      <i class="fas fa-edit wd-edit"></i>
+                    </a>
                   </div>
                 </div>
-                <div class="col wd-card" >
-                 
-                    <div class="wd-upper-half wd-bg-light-grey">
-                      <i class="fas fa-ellipsis-v wd-dots"></i>
-                    </div>
-                    <div class="wd-lower-half">
-                      <a class="wd-link" href="../Courses/Home/screen.html">
-                        <div class="wd-fontcolor-light-grey">
-                          CS6250 12631 Scalable Systems
-                        </div>
-                        <div class="wd-course-name wd-fontcolor-light-grey">
-                          CS6250.12631.202410
-                        </div>
-                        <div class="wd-course-term wd-fontcolor-light-grey">
-                          202410_1 Summer 2023 Semester Full Term
-                        </div>
-                        <i class="fas fa-edit wd-edit"></i>
-                      </a>
-                    
+                <div class="col wd-card">
+                  <div class="wd-upper-half wd-bg-light-blue">
+                    <i class="fas fa-ellipsis-v wd-dots"></i>
+                  </div>
+                  <div class="wd-lower-half">
+                    <a class="wd-link" href="../Courses/Home/screen.html">
+                      <div class="wd-fontcolor-light-blue">
+                        CS5600 12631 PDP
+                      </div>
+                      <div class="wd-course-name wd-fontcolor-light-grey">
+                        CS5600.12631.202410
+                      </div>
+                      <div class="wd-course-term wd-fontcolor-light-grey">
+                        202410_1 Fall 2022 Semester Full Term
+                      </div>
+                      <i class="fas fa-edit wd-edit"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col wd-card">
+                  <div class="wd-upper-half wd-bg-light-blue">
+                    <i class="fas fa-ellipsis-v wd-dots"></i>
+                  </div>
+                  <div class="wd-lower-half">
+                    <a class="wd-link" href="../Courses/Home/screen.html">
+                      <div class="wd-fontcolor-light-blue">
+                        CS1234 12631 ReactJS
+                      </div>
+                      <div class="wd-course-name wd-fontcolor-light-grey">
+                        CS1234.12631.202410
+                      </div>
+                      <div class="wd-course-term wd-fontcolor-light-grey">
+                        202410_1 Fall 2022 Semester Full Term
+                      </div>
+                      <i class="fas fa-edit wd-edit"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col wd-card">
+                  <div class="wd-upper-half wd-bg-light-grey">
+                    <i class="fas fa-ellipsis-v wd-dots"></i>
+                  </div>
+                  <div class="wd-lower-half">
+                    <a class="wd-link" href="../Courses/Home/screen.html">
+                      <div class="wd-fontcolor-light-grey">
+                        CS6250 12631 Scalable Systems
+                      </div>
+                      <div class="wd-course-name wd-fontcolor-light-grey">
+                        CS6250.12631.202410
+                      </div>
+                      <div class="wd-course-term wd-fontcolor-light-grey">
+                        202410_1 Summer 2023 Semester Full Term
+                      </div>
+                      <i class="fas fa-edit wd-edit"></i>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </main>
+        </div>
       </div>
     </div>
   </body>
