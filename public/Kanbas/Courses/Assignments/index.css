@@ -1,0 +1,42 @@
+.wd-assignments-btn-grp {
+    margin-left: 10px !important;
+    margin-right: 4%;
+    margin-top: 10px;
+  }
+
+  .wd-weightage{
+    border-radius: 50px !important;
+     border-color: #8e8e8e !important;
+  }
+
+  .wd-assignment-img{
+    width: 25px;
+    height: 25px;
+    margin-left: 25px;
+  }
+
+  .wd-assignment-name{
+    margin-left: 25px;
+    color: black;
+    text-decoration: none;
+    margin-top: 30px;
+  }
+
+  .wd-assignment-name:hover{
+    text-decoration: underline;
+  }
+
+  .wd-assignment-text{
+    margin-left: 25px;
+    font-size: small;
+    color: #646464;
+  }
+
+  .wd-check-symbol {
+    color: #4ab05e;
+    opacity: 0.5;
+}
+
+.wd-assignment-div{
+    padding-top: 10px !important;
+}

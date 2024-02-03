@@ -7,42 +7,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../Navigation/index.css" />
     <link href="../../libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="../Dashboard/index.css" rel="stylesheet" />
     <link href="../style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="../Courses/Modules/index.css"/>
+      <link
+      rel="stylesheet"
+      href="../Courses/Navigation/index.css"/>
+
   </head>
   <body>
+    
     <div class="container-fluid">
-      <div class="dropdown d-block d-md-none wd-kanbas-navigation-dropdown">
-        <button
-          class="btn dropdown-toggle wd-kanbas-breadcrumb-btn"
-          type="button"
-          id="dropdownMenuButton"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          <i class="fas fa-bars wd-kanbas-breadcrumb"></i>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="/Kanbas/Account/Profile/screen.html"
-            >Account</a
-          >
-          <a class="dropdown-item" href="/Kanbas/Dashboard/screen.html"
-            >Dashboard</a
-          >
-          <a class="dropdown-item" href="/Kanbas/Courses/Home/screen.html"
-            >Courses</a
-          >
-          <a class="dropdown-item" href="#">Calendar</a>
-          <a class="dropdown-item" href="#">Inbox</a>
-          <a class="dropdown-item" href="#">History</a>
-          <a class="dropdown-item" href="#">Studio</a>
-          <a class="dropdown-item" href="#">Commons</a>
-          <a class="dropdown-item" href="#">Help</a>
+      <div class="d-flex d-block d-md-none wd-kanbas-navigation-dropdown" style="max-height: 8%;">
+        <a href="/Kanbas/Dashboard/navigation.html" class="wd-quick-nav-btn wd-quick-nav-bars"> 
+          <button class="btn ">
+           <i class="fas fa-bars"></i>
+          </button></a>
+        <div style="text-align: center;" class="wd-nav-bar-content flex-grow-1 wd-nav-btns-grp">
+          <a href="/Kanbas/Dashboard/screen.html" class="wd-quick-nav-header"> Dashboard</a>
         </div>
+       
       </div>
+      
       <div class="d-flex">
         <div class="d-none d-md-block wd-navbar">
           <ul class="wd-kanbas-navigation">
@@ -108,7 +104,7 @@
             </li>
           </ul>
         </div>
-
+<div id="wd-main-content">
         <div class="flex-grow-1">
           <div class="p-4">
             <h1>Dashboard</h1>
@@ -255,6 +251,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
   </body>
 </html>

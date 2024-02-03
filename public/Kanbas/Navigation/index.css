@@ -72,16 +72,19 @@
   padding: 0px;
   margin: 0px;
   width:100% !important;
-  height: 50px;
+  height: 80px;
 }
 
-.wd-kanbas-breadcrumb{
+.wd-kanbas-navigation-bars{
   height: 100%;
-   color: white; 
-   margin-top: 30%;
+   color: black; 
+   
+   
 }
 
-.wd-kanbas-breadcrumb-btn{
+.wd-kanbas-navigation-bars-btn{
+
   color: black;
    height: 100%;
 }
+
