@@ -13,7 +13,7 @@ function Grades() {
   const as = assignments.filter((assignment) => assignment.course === courseId);
   const es = enrollments.filter((enrollment) => enrollment.course === courseId);
   return (
-    <div className="flex-grow-1" style={{ marginRight: 55 }}>
+    <div style={{ marginRight: 55 }}>
       <div className="d-flex">
         <div className="main-theme">
           GradeBook <FaCaretDown />
@@ -112,7 +112,7 @@ function Grades() {
                         grade.student === enrollment.user &&
                         grade.assignment === assignment._id
                     );
-                    return <td>{grade?.grade || ""}</td>;
+                    return <td align="center"><input style={{width:'20%'}} type="number" className="form-control" value={grade?.grade || ""}/></td>;
                   })}
                 </tr>
               );

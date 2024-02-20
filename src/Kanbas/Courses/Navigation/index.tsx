@@ -26,7 +26,7 @@ function CourseNavigation({ course_id }: { course_id: string }) {
   const course = courses.find((course) => course._id === course_id);
 
   return (
-    <div className="wd-course-nav-container">
+    <div className="wd-course-nav-container d-none d-md-block ">
     <span className="wd-semester">{course?._id} {course?.semester} Semes.....</span>
     <ul className="wd-navigation">
       {links.map((link, index) => (

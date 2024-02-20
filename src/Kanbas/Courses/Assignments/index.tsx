@@ -15,7 +15,7 @@ function Assignments() {
     (assignment) => assignment.course === courseId
   );
   return (
-    <div className="flex-grow-1" style={{marginRight:55}}>
+    <div style={{marginRight:55}}>
       <div className="d-flex  mb-3 wd-module-buttons-group">
         <div>
           <input

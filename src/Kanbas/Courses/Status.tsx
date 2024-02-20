@@ -35,7 +35,7 @@ function Status({ course_id }: { course_id: string }) {
   const course = courses.find((course) => course._id === course_id);
 
   return (
-    <div style={{ maxWidth: "22%" }} className="d-none d-xl-block float-end">
+    <div style={{ maxWidth: "25%" }} className="d-none d-xl-block float-end">
       <span>Course Status</span>
       <div className="wd-btns-1">
         <button className="btn btn-secondary wd-module-button">

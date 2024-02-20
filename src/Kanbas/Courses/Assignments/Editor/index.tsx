@@ -15,7 +15,7 @@ function AssignmentEditor() {
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
   return (
-    <div className="flex-grow-1" style={{ marginRight: 55 }}>
+    <div  style={{ marginRight: 55 }}>
       <div className="row">
         <div className="col-12">
           <button type="button" className="btn wd-module-button float-right">

@@ -19,7 +19,7 @@ function Courses() {
     <CourseHeader course_id={course?._id || ''} location={pathname} />
     <div className="d-flex">
       <CourseNavigation course_id={course?._id || ''} />
-      <>
+      <div className="flex-grow-1">
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
             <Route path="Home" element={<Home course_id={course?._id || ''}/>} />
@@ -29,7 +29,7 @@ function Courses() {
             <Route path="Assignments/:assignmentId" element={<AssignmentEditor/>} />
             <Route path="Grades" element={<Grades/>} />
           </Routes>
-      </>
+      </div>
       </div>
     </div>
   );
