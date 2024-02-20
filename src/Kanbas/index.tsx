@@ -4,6 +4,7 @@ import Dashboard from "./Dashboard";
 import Courses from "./Courses";
 import QuickNav from "./QuickNav";
 function Kanbas() {
+
     return (
       <>
       <QuickNav/>

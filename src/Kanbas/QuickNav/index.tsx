@@ -187,11 +187,14 @@ function QuickNav() {
                 to={`/Kanbas/Courses/${course?._id}/${link.name}`}
                 className="wd-module-link"
                 onClick={() => {
+                 
                   const dropdown = document.getElementById(
                     "collapseWidthExample1"
                   );
                   if (dropdown) {
                     dropdown.classList.remove("show");
+                   toggleIcon();
+                   
                   }
                 }}
               >
