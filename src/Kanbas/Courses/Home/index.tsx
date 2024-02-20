@@ -5,7 +5,7 @@ function Home({ course_id }: { course_id: string }) {
   return (
     <div className="d-flex">
       <ModuleList />
-      <Status course_id={course_id}/>
+      <Status course_id={course_id} />
     </div>
   );
 }
