@@ -13,7 +13,7 @@ function ModuleList() {
   const modulesList = modules.filter((module) => module.course === courseId);
   const [selectedModule, setSelectedModule] = useState(modulesList[0]);
   return (
-    <div className="flex-grow-1" style={{marginRight:30}}>
+    <div className="flex-grow-1" style={{marginRight:55}}>
       <div className="d-flex justify-content-end mb-3 wd-module-buttons-group ">
         <button className="btn btn-secondary me-2 wd-module-button">
           Collapse All

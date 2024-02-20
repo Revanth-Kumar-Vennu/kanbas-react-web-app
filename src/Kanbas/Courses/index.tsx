@@ -23,7 +23,7 @@ function Courses() {
   return (
     <div>
       <CourseHeader course_id={course?._id || ""} location={pathname} />
-      <div className="d-flex">
+      <div className="d-flex wd-main-content">
         <CourseNavigation course_id={course?._id || ""} />
         <div className="flex-grow-1 wd-courses-container">
           <Routes>

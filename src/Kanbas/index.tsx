@@ -15,10 +15,10 @@ function Kanbas() {
         id="wd-main-container"
         style={{ display: "block" }}
       >
-        <div className="d-none d-md-block ">
+        <div className="d-none d-md-block " style={{position:"fixed", height:'100%'}}>
           <KanbasNavigation />
         </div>
-        <div style={{ flexGrow: 1 }}>
+        <div style={{ flexGrow: 1 }} className="wd-main-div">
           <Routes>
             <Route path="/" element={<Navigate to="Dashboard" />} />
             <Route path="Account" element={<h1>Account</h1>} />

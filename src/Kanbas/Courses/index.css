@@ -269,7 +269,7 @@
 /* Media query for screen size larger than md */
 @media (min-width: 769px) {
   .wd-main-div {
-    margin-left: 90px;
+    margin-left: 85px;
   }
 }
 
