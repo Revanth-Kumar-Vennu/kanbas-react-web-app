@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
-import { courses } from "../../Kanbas/Database";
+// import { courses } from "../../Kanbas/Database";
 import { FaBars, FaGlasses } from "react-icons/fa";
 import "./index.css";
 function CourseHeader({
   course_id,
   location,
+  courses,
 }: {
   course_id: any;
   location: any;
+  courses: any; // Add the missing 'courses' property
 }) {
-  const course = courses.find((course) => course._id === course_id);
+  const course = courses.find((course: { _id: any; }) => course._id === course_id);
   const course_navigation = [
     "Home",
     "Modules",

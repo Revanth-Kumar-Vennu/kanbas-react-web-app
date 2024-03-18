@@ -1,4 +1,3 @@
-import { courses } from "../../Kanbas/Database";
 import {
   Navigate,
   Route,
@@ -14,7 +13,7 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
 
-function Courses() {
+function Courses({ courses }: { courses: any[]; }) {
   const { courseId } = useParams();
   const { pathname } = useLocation();
   console.log(pathname);
@@ -22,7 +21,7 @@ function Courses() {
   const course = courses.find((course) => course._id === courseId);
   return (
     <div>
-      <CourseHeader course_id={course?._id || ""} location={pathname} />
+      <CourseHeader course_id={course?._id || ""} location={pathname} courses={courses} />
       <div className="d-flex wd-main-content">
         <CourseNavigation course_id={course?._id || ""} />
         <div className="flex-grow-1 wd-courses-container">
