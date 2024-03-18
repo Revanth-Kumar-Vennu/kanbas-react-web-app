@@ -151,6 +151,7 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
                       setshowUpdateCourseButton(true);
                       setshowAddCourseButton(false);
                       setCourse(course);
+                      window.scrollTo({ top: 0, behavior: "smooth"})
                     }}
                   />
                   <FaTrash
