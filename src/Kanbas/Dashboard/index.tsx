@@ -16,6 +16,16 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
     setshowAddCourseButton(true);
     setShowAddCourse(!showAddCourse);
   };
+  const dummyCourse = {
+    _id: "0",
+    name: "New Course",
+    number: "New Course Number",
+    startDate: "2023-09-10",
+    endDate: "2023-12-15",
+    image: "/images/reactjs.jpg",
+    theme: "light-grey",
+    semester: "Fall 2023",
+  };
 
   return (
     <div className="p-4">
@@ -89,10 +99,10 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
               />
             </div>
           </div>
-          <div className="row">
+          <div className="d-flex justify-content-center">
             {showAddCourseButton && (
               <button
-                className="btn btn-primary ms-auto float-end "
+                className="btn btn-success"
                 onClick={addNewCourse}
               >
                 Add Course
@@ -100,7 +110,7 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
             )}
             {showUpdateCourseButton && (
               <button
-                className="btn btn-primary ms-auto float-end"
+                className="btn btn-success"
                 onClick={()=>{updateCourse();
                     setShowAddCourse(false);
                   setshowAddCourseButton(true);
@@ -109,6 +119,13 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
                 Update Course
               </button>
             )}
+            &nbsp;&nbsp;
+            <button className="btn btn-danger" onClick={()=>{
+              setShowAddCourse(false);
+              setshowAddCourseButton(true);
+              setshowUpdateCourseButton(false);
+              setCourse(dummyCourse);
+            }}>Cancel</button>
           </div>
           </div>
       )}
