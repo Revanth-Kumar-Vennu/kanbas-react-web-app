@@ -138,7 +138,7 @@ function AssignmentEditor() {
               <div className="row">
                 <div className="col-6">
                   <label htmlFor="available-from">
-                    <b>Available From</b>
+                    <b>From</b>
                   </label>
                   <input
                     id="available-from"

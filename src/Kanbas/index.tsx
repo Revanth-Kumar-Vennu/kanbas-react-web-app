@@ -57,7 +57,7 @@ function Kanbas() {
     <>
         <Provider store={store}>
 
-      {pathname.includes("KanbasQuickNav") ? <KanbasQuickNav /> : <QuickNav />}
+      {pathname.includes("KanbasQuickNav") ? <KanbasQuickNav /> : <QuickNav   courses={courses}/>}
       <div
         className="d-flex"
         id="wd-main-container"

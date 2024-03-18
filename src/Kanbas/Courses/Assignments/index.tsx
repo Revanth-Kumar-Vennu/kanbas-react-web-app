@@ -135,8 +135,8 @@ function Assignments() {
                 </p>
               </div>
               <div className="ms-auto">
-                <FaCheckCircle className="fas fa-check-circle text-success wd-check-symbol  me-4" />
-                <FaEllipsisV className="fas fa-ellipsis-v  wd-dots  me-4" />
+                <FaCheckCircle className="fas fa-check-circle text-success wd-check-symbol  me-2" />
+                <FaEllipsisV className="fas fa-ellipsis-v  wd-dots  me-2" />
                 <FaTrash
                   className="fas fa-trash wd-dots"
                   onClick={() => {

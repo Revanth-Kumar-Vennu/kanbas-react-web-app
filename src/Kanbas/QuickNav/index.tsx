@@ -1,5 +1,4 @@
 import { Route, Routes, useLocation } from "react-router";
-import { courses } from "../Database";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -26,7 +25,7 @@ import {
 import KanbasQuickNav from "../KanbasQuickNav";
 import { useState } from "react";
 
-function QuickNav() {
+function QuickNav({ courses }: { courses: any }) {
   document.getElementById("wd-main-container")?.classList.add("d-flex");
   const [isChevronDown, setIsChevronDown] = useState(true);
   const [isCollapsed, setIsCollapsed] = useState(false);
