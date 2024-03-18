@@ -1,21 +1,53 @@
-import React from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
-import { assignments } from "../../../Database";
+import React, { useEffect } from "react";
+import { useNavigate, useParams, Link, useLocation } from "react-router-dom";
 import "../../index.css";
 import { FaCheckCircle, FaEllipsisV } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { KanbasState } from "../../../store";
+import {
+  addAssignment,
+  setAssignment,
+  updateAssignment,
+} from "../assignmentsReducer";
 function AssignmentEditor() {
-  const { assignmentId } = useParams();
-  const assignment = assignments.find(
-    (assignment) => assignment._id === assignmentId
-  );
-  const { courseId } = useParams();
+  const { courseId, assignmentId } = useParams();
+  console.log(courseId, assignmentId);
+  const { pathname } = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const assignment = useSelector(
+    (state: KanbasState) => state.assignmentsReducer.assignment
+  );
+  const assignments = useSelector(
+    (state: KanbasState) => state.assignmentsReducer.assignments
+  );
+  const dummyAssignment = useSelector(
+    (state: KanbasState) => state.assignmentsReducer.dummyAssignment
+  );
   const handleSave = () => {
-    console.log("Actually saving assignment TBD in later assignments");
+    if (pathname.includes("new")) {
+      dispatch(addAssignment({ ...assignment, course: courseId }));
+    } else {
+      dispatch(updateAssignment(assignment));
+    }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
+
+  useEffect(() => {
+    if (assignmentId !== "new") {
+      const currentAssignment = assignments.find(
+        (assignment) => assignment._id === assignmentId
+      );
+      if (currentAssignment) {
+        dispatch(setAssignment(currentAssignment));
+      }
+    } else {
+      dispatch(setAssignment(dummyAssignment));
+    }
+  }, [assignmentId, assignments, dummyAssignment, dispatch]);
+
   return (
-    <div  style={{ marginRight: 55 }}>
+    <div style={{ marginRight: 55 }}>
       <div className="row">
         <div className="col-12">
           <button type="button" className="btn wd-module-button float-right">
@@ -38,12 +70,121 @@ function AssignmentEditor() {
             type="text"
             value={assignment?.title}
             className="form-control"
+            onChange={(e) =>
+              dispatch(setAssignment({ ...assignment, title: e.target.value }))
+            }
           />
+        </div>
+      </div>
+      <br />
+      <div className="row">
+        <div className="col-12">
+          <label>Description</label>
+          <textarea
+            id="description"
+            value={assignment?.description}
+            className="form-control"
+            onChange={(e) =>
+              dispatch(
+                setAssignment({ ...assignment, description: e.target.value })
+              )
+            }
+          ></textarea>
+        </div>
+      </div>
+      <br />
+      <div className="row">
+        <div className="col-3 set-label wd-form-items">
+          <label>Points</label>
+        </div>
+        <div className="col-9 wd-form-items">
+          <input
+            type="number"
+            value={assignment?.points}
+            className="form-control"
+            onChange={(e) =>
+              dispatch(setAssignment({ ...assignment, points: e.target.value }))
+            }
+          />
+        </div>
+      </div>
+      <br />
+      <div className="row">
+        <div className="col-3 set-label wd-form-items">
+          <label>Assign</label>
+        </div>
+        <div className="col-9 wd-form-items">
+          <div className="wd-asign-table">
+            <div className="wd-assign-div-padding-top">
+              <div>
+                <b>Due</b>
+              </div>
+              <div>
+                <input
+                  type="date"
+                  value={assignment.dueDate}
+                  className="form-control"
+                  onChange={(e) => {
+                    dispatch(
+                      setAssignment({ ...assignment, dueDate: e.target.value })
+                    );
+                    console.log(assignment);
+                  }}
+                />
+              </div>
+            </div>
+
+            <div className="wd-assign-div-padding-top">
+              <div className="row">
+                <div className="col-6">
+                  <label htmlFor="available-from">
+                    <b>Available From</b>
+                  </label>
+                  <input
+                    id="available-from"
+                    type="date"
+                    value={assignment.availableFrom}
+                    className="form-control"
+                    onChange={(e) =>
+                      dispatch(
+                        setAssignment({
+                          ...assignment,
+                          availableFrom: e.target.value,
+                        })
+                      )
+                    }
+                  />
+                </div>
+                <div className="col-6">
+                  <label htmlFor="until">
+                    <b>Until</b>
+                  </label>
+                  <input
+                    id="until"
+                    type="date"
+                    value={assignment.availableUntil}
+                    className="form-control"
+                    onChange={(e) =>
+                      dispatch(
+                        setAssignment({
+                          ...assignment,
+                          availableUntil: e.target.value,
+                        })
+                      )
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <hr />
       <div>
-        <button onClick={handleSave} className="btn  btn-danger ms-2 float-end">
+        <button
+          onClick={() => handleSave()}
+          className="btn  btn-danger ms-2 float-end"
+        >
           Save
         </button>
         <Link
@@ -53,7 +194,6 @@ function AssignmentEditor() {
           Cancel
         </Link>
       </div>
-     
     </div>
   );
 }
