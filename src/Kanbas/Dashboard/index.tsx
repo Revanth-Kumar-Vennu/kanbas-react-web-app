@@ -92,6 +92,7 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
                 className="form-control"
                 id="endDate"
                 placeholder="End Date"
+                min={course.startDate}
                 onChange={(e) =>
                   setCourse({ ...course, endDate: e.target.value })
                 }

@@ -124,6 +124,7 @@ function AssignmentEditor() {
                   type="date"
                   value={assignment.dueDate}
                   className="form-control"
+                  min={assignment.availableFrom}
                   onChange={(e) => {
                     dispatch(
                       setAssignment({ ...assignment, dueDate: e.target.value })
@@ -163,6 +164,7 @@ function AssignmentEditor() {
                     id="until"
                     type="date"
                     value={assignment.availableUntil}
+                    min={assignment.availableFrom}
                     className="form-control"
                     onChange={(e) =>
                       dispatch(
