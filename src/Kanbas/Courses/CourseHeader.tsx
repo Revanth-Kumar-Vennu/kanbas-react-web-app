@@ -5,13 +5,15 @@ import "./index.css";
 function CourseHeader({
   course_id,
   location,
-  courses,
+  course,
 }: {
   course_id: any;
   location: any;
-  courses: any; // Add the missing 'courses' property
+  course: any;
+ 
 }) {
-  const course = courses.find((course: { _id: any; }) => course._id === course_id);
+  console.log(course);
+  
   const course_navigation = [
     "Home",
     "Modules",

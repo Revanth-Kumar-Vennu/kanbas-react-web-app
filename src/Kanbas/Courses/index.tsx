@@ -12,16 +12,30 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-function Courses({ courses }: { courses: any[]; }) {
+function Courses() {
   const { courseId } = useParams();
   const { pathname } = useLocation();
   console.log(pathname);
+    const COURSES_API = "http://localhost:4000/api/courses";
+  const [course, setCourse] = useState<any>({ _id: "" });
+  const findCourseById = async (courseId?: string) => {
+    const response = await axios.get(
+      `${COURSES_API}/${courseId}`
+    );
+    setCourse(response.data);
+  };
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
 
-  const course = courses.find((course) => course._id === courseId);
+
+  // const course = courses.find((course) => course._id === courseId);
   return (
     <div>
-      <CourseHeader course_id={course?._id || ""} location={pathname} courses={courses} />
+      <CourseHeader course_id={course?._id || ""} location={pathname}  course={course}/>
       <div className="d-flex wd-main-content">
         <CourseNavigation course_id={course?._id || ""} />
         <div className="flex-grow-1 wd-courses-container">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaEllipsisV,
   FaCheckCircle,
@@ -11,8 +11,10 @@ import { useParams } from "react-router";
 import "./index.css";
 import Popup from "./popup";
 import { useSelector, useDispatch } from "react-redux";
-import { addModule, deleteModule, updateModule, setModule } from "./reducer";
+import { addModule, deleteModule, updateModule, setModule, setModules } from "./reducer";
 import { KanbasState } from "../../store";
+import { findModulesForCourse, createModule } from "./client";
+
 function ModuleList() {
   const { courseId } = useParams();
   const moduleList = useSelector(
@@ -29,6 +31,13 @@ function ModuleList() {
   const [selectedModule, setSelectedModule] = useState(moduleList[0]);
   const [showPopup, setShowPopup] = useState(false);
   const [popupTitle, setPopupTitle] = useState("Add Module");
+  useEffect(() => {
+    findModulesForCourse(courseId)
+      .then((modules) =>
+        dispatch(setModules(modules))
+    );
+  }, [courseId, dispatch]);
+
 
   const handleEditModule = () => {
     dispatch(updateModule(module));
@@ -41,6 +50,14 @@ function ModuleList() {
     setShowPopup(false);
     dispatch(setModule(dummyModule));
   };
+   
+  // const handleAddModule = () => {
+  //   createModule(courseId, module).then((module) => {
+  //     dispatch(addModule(module));
+  //   setShowPopup(false);
+  //   dispatch(setModule(dummyModule));
+  //   });
+  // };
 
   const handleCancel = () => {
     dispatch(setModule(dummyModule));
