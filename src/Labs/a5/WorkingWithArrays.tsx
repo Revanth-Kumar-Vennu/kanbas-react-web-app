@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 function WorkingWithArrays() {
-  const API = "http://localhost:4000/a5/todos";
+  const API_BASE = process.env.REACT_APP_API_BASE;
+  const API = API_BASE + "/a5/todos";
   const [todo, setTodo] = useState({
     id: 1,
     title: "NodeJS Assignment",
@@ -28,8 +29,8 @@ function WorkingWithArrays() {
 
   const fetchTodoById = async (id: any) => {
     try {
-    const response = await axios.get(`${API}/${id}`);
-    setTodo(response.data);
+      const response = await axios.get(`${API}/${id}`);
+      setTodo(response.data);
     } catch (error: any) {
       setTodo({
         id: 999,
@@ -229,7 +230,6 @@ function WorkingWithArrays() {
                 className="btn btn-primary"
                 onClick={() => {
                   fetchTodoById(todo.id);
-                 
                 }}
               >
                 Edit Todo using 'Put method'
