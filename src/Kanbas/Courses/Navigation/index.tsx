@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { courses } from "../../Database";
-import "./index.css"; // feel free to use the CSS from previous assignments
-function CourseNavigation({ course_id }: { course_id: string }) {
+import "./index.css";
+function CourseNavigation({ course_id, course }: { course_id: string, course: any }) {
   const links = [
     "Home",
     "Modules",
@@ -23,7 +22,7 @@ function CourseNavigation({ course_id }: { course_id: string }) {
     "Settings",
   ];
   const { pathname } = useLocation();
-  const course = courses.find((course) => course._id === course_id);
+  // const course = courses.find((course) => course._id === course_id);
 
   return (
     <div className="wd-course-nav-container d-none d-md-block ">

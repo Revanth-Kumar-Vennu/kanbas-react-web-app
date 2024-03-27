@@ -19,31 +19,32 @@ function Courses() {
   const { courseId } = useParams();
   const { pathname } = useLocation();
   console.log(pathname);
-    const COURSES_API = "http://localhost:4000/api/courses";
+  const COURSES_API = "https://kanbas-node-server-app-7wg3.onrender.com/api/courses";
   const [course, setCourse] = useState<any>({ _id: "" });
   const findCourseById = async (courseId?: string) => {
-    const response = await axios.get(
-      `${COURSES_API}/${courseId}`
-    );
+    const response = await axios.get(`${COURSES_API}/${courseId}`);
     setCourse(response.data);
   };
   useEffect(() => {
     findCourseById(courseId);
   }, [courseId]);
 
-
   // const course = courses.find((course) => course._id === courseId);
   return (
     <div>
-      <CourseHeader course_id={course?._id || ""} location={pathname}  course={course}/>
+      <CourseHeader
+        course_id={course?._id || ""}
+        location={pathname}
+        course={course}
+      />
       <div className="d-flex wd-main-content">
-        <CourseNavigation course_id={course?._id || ""} />
+        <CourseNavigation course_id={course?._id || ""} course={course} />
         <div className="flex-grow-1 wd-courses-container">
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
             <Route
               path="Home"
-              element={<Home course_id={course?._id || ""} />}
+              element={<Home course_id={course?._id || ""} course={course}/>}
             />
             <Route path="Modules" element={<Module />} />
             <Route path="Piazza" element={<h1>Piazza</h1>} />

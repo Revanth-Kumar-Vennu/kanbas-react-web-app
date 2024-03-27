@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaCaretDown,
   FaCheckCircle,
@@ -11,9 +11,11 @@ import { Link, useParams } from "react-router-dom";
 import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../store";
+import * as client from "./client";
 import {
   deleteAssignment,
   setSelectedAssignment,
+  setAssignments,
 } from "./assignmentsReducer";
 function Assignments() {
   const { courseId } = useParams();
@@ -26,9 +28,16 @@ function Assignments() {
   );
 
   const dispatch = useDispatch();
+  useEffect(() => {
+    client
+      .findAssignmentForCourse(courseId)
+      .then((modules) => dispatch(setAssignments(modules)));
+  }, [courseId, dispatch]);
   const handleDelete = (assignment_id: string) => {
-    dispatch(deleteAssignment(assignment_id));
-    setShowConfirm(false);
+    client.deleteAssignment(assignment_id).then(() => {
+      dispatch(deleteAssignment(assignment_id));
+      setShowConfirm(false);
+    });
   };
   return (
     <div style={{ marginRight: 55 }}>

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import { courses } from "../../Kanbas/Database";
 import { FaBars, FaGlasses } from "react-icons/fa";
 import "./index.css";
 function CourseHeader({
@@ -12,7 +11,6 @@ function CourseHeader({
   course: any;
  
 }) {
-  console.log(course);
   
   const course_navigation = [
     "Home",

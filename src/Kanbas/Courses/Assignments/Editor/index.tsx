@@ -4,6 +4,7 @@ import "../../index.css";
 import { FaCheckCircle, FaEllipsisV } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../../store";
+import * as client from "../client";
 import {
   addAssignment,
   setAssignment,
@@ -26,11 +27,17 @@ function AssignmentEditor() {
   );
   const handleSave = () => {
     if (pathname.includes("new")) {
+      client.createAssignment(courseId, assignment).then(() => {
       dispatch(addAssignment({ ...assignment, course: courseId }));
+      navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+      });
     } else {
-      dispatch(updateAssignment(assignment));
+      client.updateAssignment(assignment).then(() => {
+        dispatch(updateAssignment(assignment));
+        navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+      });
     }
-    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+   
   };
 
   useEffect(() => {

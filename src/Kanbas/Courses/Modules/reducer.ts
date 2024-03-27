@@ -1,31 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
-  modules: [
-    {
-      name: "Module 1",
-      description: "Description 1",
-      _id: "123"
-    },
-    {
-      name: "Module 2",
-      description: "Description 2",
-      _id: "234"
-    },
-    {
-      name: "Module 3",
-      description: "Description 3",
-      _id: "345"
-    },
-  ],
-  module: { name: "New Module", description: "New Description", _id: "0"},
-    dummyModule : {
+  modules: Array<any>(),
+  module: { name: "New Module", description: "New Description", _id: "0" },
+  dummyModule: {
     _id: "0",
     name: "New Module",
-    description: "New Description" }
+    description: "New Description",
+  },
 };
-
 
 const modulesSlice = createSlice({
   name: "modules",
@@ -36,7 +19,10 @@ const modulesSlice = createSlice({
     },
 
     addModule: (state, action) => {
-      state.modules = [action.payload, ...state.modules] as typeof state.modules;
+      state.modules = [
+        ...state.modules,
+        action.payload,
+      ]
     },
 
     deleteModule: (state, action) => {
@@ -51,7 +37,7 @@ const modulesSlice = createSlice({
         } else {
           return module;
         }
-      }) as never[];
+      });
     },
     setModule: (state, action) => {
       state.module = action.payload;
@@ -59,7 +45,6 @@ const modulesSlice = createSlice({
   },
 });
 
-
-export const { addModule, deleteModule,
-  updateModule, setModule, setModules } = modulesSlice.actions;
+export const { addModule, deleteModule, updateModule, setModule, setModules } =
+  modulesSlice.actions;
 export default modulesSlice.reducer;

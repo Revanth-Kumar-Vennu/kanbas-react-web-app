@@ -11,9 +11,15 @@ import { useParams } from "react-router";
 import "./index.css";
 import Popup from "./popup";
 import { useSelector, useDispatch } from "react-redux";
-import { addModule, deleteModule, updateModule, setModule, setModules } from "./reducer";
+import {
+  addModule,
+  deleteModule,
+  updateModule,
+  setModule,
+  setModules,
+} from "./reducer";
 import { KanbasState } from "../../store";
-import { findModulesForCourse, createModule } from "./client";
+import * as client from "./client";
 
 function ModuleList() {
   const { courseId } = useParams();
@@ -32,32 +38,30 @@ function ModuleList() {
   const [showPopup, setShowPopup] = useState(false);
   const [popupTitle, setPopupTitle] = useState("Add Module");
   useEffect(() => {
-    findModulesForCourse(courseId)
-      .then((modules) =>
-        dispatch(setModules(modules))
-    );
+    client
+      .findModulesForCourse(courseId)
+      .then((modules) => dispatch(setModules(modules)));
   }, [courseId, dispatch]);
 
-
-  const handleEditModule = () => {
+  const handleEditModule = async () => {
+    const status = await client.updateModule(module);
     dispatch(updateModule(module));
     setShowPopup(false);
     dispatch(setModule(dummyModule));
   };
 
   const handleAddModule = () => {
-    dispatch(addModule({ ...module, course: courseId }));
-    setShowPopup(false);
-    dispatch(setModule(dummyModule));
+    client.createModule(courseId, module).then((module) => {
+      dispatch(addModule(module));
+      setShowPopup(false);
+      dispatch(setModule(dummyModule));
+    });
   };
-   
-  // const handleAddModule = () => {
-  //   createModule(courseId, module).then((module) => {
-  //     dispatch(addModule(module));
-  //   setShowPopup(false);
-  //   dispatch(setModule(dummyModule));
-  //   });
-  // };
+  const handleDeleteModule = (moduleId: string) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
 
   const handleCancel = () => {
     dispatch(setModule(dummyModule));
@@ -141,13 +145,13 @@ function ModuleList() {
                       />
                       <FaTrash
                         className="wd-dots ms-2"
-                        onClick={() => dispatch(deleteModule(module._id))}
+                        onClick={() => handleDeleteModule(module?._id)}
                       />
                     </span>
                     <br />
                   </div>
                 </div>
-                {selectedModule._id === module._id && (
+                {selectedModule?._id === module?._id && (
                   <ul className="list-group">
                     {module.lessons?.map((lesson: any) => (
                       <li className="list-group-item remove-padding">

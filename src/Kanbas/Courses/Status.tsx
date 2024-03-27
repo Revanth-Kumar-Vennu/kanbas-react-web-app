@@ -14,9 +14,8 @@ import {
   FaTimes
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { courses } from "../Database";
 
-function Status({ course_id }: { course_id: string }) {
+function Status({ course_id, course }: { course_id: string, course: any}) {
   const lectures = [
     {
       name: "Lecture 1",
@@ -32,7 +31,6 @@ function Status({ course_id }: { course_id: string }) {
     },
   ];
   console.log(course_id);
-  const course = courses.find((course) => course._id === course_id);
 
   return (
     <div style={{ maxWidth: "25%" }} className="d-none d-xl-block float-end">
